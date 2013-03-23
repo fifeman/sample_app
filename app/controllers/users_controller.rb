@@ -29,8 +29,7 @@ class UsersController < ApplicationController
   def edit
   end
 
-  def update
-    @user = User.find(params[:id])    
+  def update  
     if @user.update_attributes(params[:user])
       sign_in @user
       flash[:success] = "Profile updated"     
